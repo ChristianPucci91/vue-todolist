@@ -21,7 +21,7 @@
         <!-- box input & button  -->
         <div class="header">
           <!-- v-model sarà il valore di quello che inserirà l'utente -->
-          <input  type="text" v-model="value" placeholder="Inserisci todo...">
+          <input  type="text" v-model="value" placeholder="Inserisci todo..." v-on:keyup.13="enterValue">
           <button type="button" name="button" @click="addValue">Aggiungi</button>
 
         </div>
