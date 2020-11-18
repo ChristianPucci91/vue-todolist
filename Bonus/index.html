@@ -32,10 +32,13 @@
            {{toDoList[index]}}
 
           <!-- darò un evento click legato all'indice dell'icona aggiunta -->
-          <i class = 'fas fa-times' @click="removeList(index)"></i>
+          <i class = 'fas fa-times' @click="removeList(index)" ></i>
 
           </div>
-          <div v-for ="(item,index) in toDoList"class="deleteBox">
+          <div :class="deleteBox">
+            <h3>Vuoi cancellare?</h3>
+            <button type="button" name="button">Si</button>
+            <button type="button" name="button">Annulla</button>
 
           </div>
         </div>

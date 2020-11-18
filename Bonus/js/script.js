@@ -10,6 +10,7 @@ var app = new Vue({
       "Fare colazione",
       "Allenarsi",
     ],
+    deleteBox:"hide",
     img:"img/todowhite.png",
     value:null // valore di quello che inserisce l'utente
   },
@@ -17,7 +18,7 @@ var app = new Vue({
   methods: { // funzione inserimento con tasto ENTER
     enterValue: function () {
 
-      if (this.value == null) {
+      if ((this.value == null) || (this.value == 0 )) {
         alert("ERRORE: Devi inserire qualcosa");
       }else if (this.value.length > 50) {
         alert("ERRORE: Non puoi inserire più di 50 caratteri");
@@ -32,6 +33,9 @@ var app = new Vue({
 
     },
     removeList: function (index) {
+      if (this.deleteBox = "hide") {
+        this.deleteBox = "show"
+      }
       this.toDoList.splice(index,1)
     },
 
