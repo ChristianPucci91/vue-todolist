@@ -10,6 +10,7 @@ var app = new Vue({
       "Fare colazione",
       "Allenarsi",
     ],
+    img:"img/todowhite.png",
     value:null // valore di quello che inserisce l'utente
 
   },

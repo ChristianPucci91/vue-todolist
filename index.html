@@ -13,10 +13,13 @@
 
       <!-- container pagina -->
       <div id="app" class="container">
+        <div class="jumbo">
+          <img :src="img" alt="">
+        </div>
         <!-- box input & button  -->
         <div class="header">
           <!-- v-model sarà il valore di quello che inserirà l'utente -->
-          <input  type="text" v-model="value">
+          <input  type="text" v-model="value" placeholder="Inserisci todo...">
           <button type="button" name="button" @click="addValue">Aggiungi</button>
 
         </div>

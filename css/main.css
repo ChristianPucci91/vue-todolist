@@ -1,3 +1,5 @@
+/* regole genearli */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +13,9 @@
     margin: 0 auto;
     width: 70%;
     height: 100vh;
-    /* debug */
-    margin-top: 100px;
-    /* fine debug */
 }
 
+/* regole di posizionamento box */
 .list {
   display: flex;
   flex-direction: column;
@@ -23,14 +23,49 @@
   align-items: space-between;
   width: 70%;
   margin:0 auto;
+  margin-top: 20px;
+  min-height: 40px;
+}
+
+.list:hover {
+  background-color: lightgoldenrodyellow;
 }
 
 .sotto_list {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  font-family: 'Indie Flower', cursive;
+  border-bottom: 1px solid #3C3C3C;
+  align-items: center;
+  min-height: 40px;
 }
+
+.jumbo {
+  text-align: center;
+}
+
+/* regole di grafica */
 
 .fas.fa-times {
   cursor: pointer;
+}
+button{
+  color:white;
+  font-size: 20px;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  background-color: #3C3C3C;
+  border-radius:10px;
+}
+input{
+  color:#3C3C3C;
+  font-size: 20px;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 350px;
+  border-radius:10px;
 }
