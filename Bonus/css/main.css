@@ -23,9 +23,17 @@
   justify-content:center;
   align-items: space-between;
   width: 70%;
-  margin:0 auto;
   margin-top: 20px;
   min-height: 40px;
+}
+i {
+  float:right;
+  margin:auto 5px;
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: line-through;
 }
 
 .list:hover {
@@ -34,15 +42,14 @@
 }
 
 .sotto_list {
-  display: flex;
-  justify-content: space-between;
+
   font-family: 'Amatic SC', cursive;
   font-weight: 800;
   font-size: 40px;
   border-bottom: 1px solid #3C3C3C;
-  align-items: center;
+  line-height: 100%;
   min-height: 40px;
-  padding:0 5px ;
+  padding: 5px ;
 }
 
 .jumbo {
@@ -51,9 +58,6 @@
 
 /* regole di grafica */
 
-.fas.fa-times {
-  cursor: pointer;
-}
 button{
   color:white;
   font-size: 20px;
@@ -81,16 +85,23 @@ input{
 
 /* delete box */
 
-.deletebox {
-  width: 300px;
-  height: 300px;
-  background: grey;
+
+.btn {
+  height: 50px;
+  width: 50%;
+  float:left;
 }
 
 .hide {
   display: none;
 }
 .show {
-  position: absolute;
   display: block;
+  position: absolute;
+  width: 200px;
+  height: auto;
+  border: 2px solid #3C3C3C;
+  border-radius: 10px;
+  left:75%;
+  top:15%;
 }

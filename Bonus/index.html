@@ -27,21 +27,29 @@
         </div>
         <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
         <div v-for="(item,index) in toDoList" class="list">
-          <div  class="sotto_list" >
+          <div  :class="{active: isActive}" class="sotto_list">
 
            {{toDoList[index]}}
 
           <!-- darò un evento click legato all'indice dell'icona aggiunta -->
+
           <i class = 'fas fa-times' @click="removeList(index)" ></i>
+          <i class="far fa-check-circle" v-on:click="signedList(index)" ></i>
 
           </div>
-          <div :class="deleteBox">
-            <h3>Vuoi cancellare?</h3>
-            <button type="button" name="button">Si</button>
-            <button type="button" name="button">Annulla</button>
 
-          </div>
+          <!-- // test box conferma per eliminare -->
+          <!-- <div :class="(removeList==true)?'show':'hide'">
+
+            <h3>Confermi?</h3>
+            <button class="btn" type="button" name="button">Si</button>
+            <button class="btn" type="button" name="button">Annulla</button>
+
+          </div> -->
+          <!-- fine test -->
+
         </div>
+
       </div>
 
     <script src="js/script.js"></script>
