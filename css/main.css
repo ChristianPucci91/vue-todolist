@@ -6,7 +6,30 @@
 }
 .container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     width: 70%;
     height: 100vh;
+    /* debug */
+    margin-top: 100px;
+    /* fine debug */
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: space-between;
+  width: 70%;
+  margin:0 auto;
+}
+
+.sotto_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fas.fa-times {
+  cursor: pointer;
 }

@@ -20,13 +20,15 @@
           <button type="button" name="button">Aggiungi</button>
 
         </div>
-        <div class="list">
-          <div v-for="(item) in toDoList" >
+        <div v-for="(item) in toDoList" class="list">
+          <div  class="sotto_list" >
 
            {{item}}
-
+          <i class = 'fas fa-times'></i>
           </div>
-          <span v-for ="(item) in toDoList" class = 'fas fa-times'></span>
+
+
+
         </div>
       </div>
 
