@@ -28,7 +28,8 @@
 }
 
 .list:hover {
-  background-color: lightgoldenrodyellow;
+  background-color: #3C3C3C;
+  color:white;
 }
 
 .sotto_list {
@@ -38,6 +39,7 @@
   border-bottom: 1px solid #3C3C3C;
   align-items: center;
   min-height: 40px;
+  padding:0 5px ;
 }
 
 .jumbo {
@@ -52,20 +54,24 @@
 button{
   color:white;
   font-size: 20px;
-  line-height: 50px;
-  height: 50px;
-  text-align: center;
+  height: 100%;
   width: 150px;
   cursor: pointer;
   background-color: #3C3C3C;
   border-radius:10px;
+  box-shadow: 0 0 5px 0 #616A6B;
+}
+
+button:hover{
+  background-color: #616A6B;
+  box-shadow: 0 0 5px 0 #3C3C3C;
 }
 input{
   color:#3C3C3C;
   font-size: 20px;
   line-height: 50px;
-  height: 50px;
   text-align: center;
   width: 350px;
   border-radius:10px;
+  box-shadow: 0 0 5px 0 #3C3C3C;
 }
