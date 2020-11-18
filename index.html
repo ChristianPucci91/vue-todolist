@@ -16,15 +16,15 @@
 
         <div class="header">
 
-          <input type="text" name="" value="">
-          <button type="button" name="button">Aggiungi</button>
+          <input  type="text" v-model="value">
+          <button type="button" name="button" @click="addValue">Aggiungi</button>
 
         </div>
-        <div v-for="(item) in toDoList" class="list">
+        <div v-for="(item,index) in toDoList" class="list">
           <div  class="sotto_list" >
 
            {{item}}
-          <i class = 'fas fa-times'></i>
+          <i class = 'fas fa-times' @click="removeList"></i>
           </div>
 
 
