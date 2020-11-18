@@ -22,7 +22,7 @@
         <div class="header">
           <!-- v-model sarà il valore di quello che inserirà l'utente -->
           <input  type="text" v-model="value" placeholder="Inserisci todo..." v-on:keyup.13="enterValue">
-          <button type="button" name="button" @click="addValue">Aggiungi</button>
+          <button type="button" name="button" @click="enterValue">Aggiungi</button>
 
         </div>
         <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
@@ -33,6 +33,9 @@
 
           <!-- darò un evento click legato all'indice dell'icona aggiunta -->
           <i class = 'fas fa-times' @click="removeList(index)"></i>
+
+          </div>
+          <div v-for ="(item,index) in toDoList"class="deleteBox">
 
           </div>
         </div>
