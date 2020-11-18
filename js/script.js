@@ -16,9 +16,16 @@ var app = new Vue({
   },
   methods: {
     addValue: function () {
-      this.toDoList.push(this.value);
-      this.value = '';
-      console.log(this.value);
+      if (this.value == null) {
+        alert("ERRORE: Devi inserire qualcosa");
+      }
+      else if (this.value.length > 50) {
+        alert("ERRORE: Non puoi inserire più di 50 caratteri");
+      }else {
+        this.toDoList.push(this.value);
+        this.value = '';
+        console.log(this.value);
+      }
     },
     removeList: function (index) {
       this.toDoList.splice(index,1)
