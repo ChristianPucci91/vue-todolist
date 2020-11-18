@@ -10,16 +10,19 @@ var app = new Vue({
       "Fare colazione",
       "Allenarsi",
     ],
-    value:null
+    value:null // valore di quello che inserisce l'utente
 
   },
   methods: {
     addValue: function () {
-      this.toDoList.push(this.value)
+      this.toDoList.push(this.value);
+      this.value = '';
+      console.log(this.value);
     },
-    // removeList: function () {
-    //   this.toDoList.remove()
-    // }
+    removeList: function (index) {
+      this.toDoList.splice(index,1)
+      console.log(this.toDoList[index]);
+    }
   }
 
 })

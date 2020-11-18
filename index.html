@@ -11,27 +11,27 @@
     </head>
     <body>
 
-
+      <!-- container pagina -->
       <div id="app" class="container">
-
+        <!-- box input & button  -->
         <div class="header">
-
+          <!-- v-model sarà il valore di quello che inserirà l'utente -->
           <input  type="text" v-model="value">
           <button type="button" name="button" @click="addValue">Aggiungi</button>
 
         </div>
+        <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
         <div v-for="(item,index) in toDoList" class="list">
           <div  class="sotto_list" >
 
-           {{item}}
-          <i class = 'fas fa-times' @click="removeList"></i>
+           {{toDoList[index]}}
+
+          <!-- darò un evento click legato all'indice dell'icona aggiunta -->
+          <i class = 'fas fa-times' @click="removeList(index)"></i>
+
           </div>
-
-
-
         </div>
       </div>
-
 
     <script src="js/script.js"></script>
     </body>
