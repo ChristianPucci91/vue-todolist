@@ -15,6 +15,7 @@
 
       <!-- container pagina -->
       <div id="app" class="container">
+        <!-- logo pagina -->
         <div class="jumbo">
 
           <img :src="img" alt="">
@@ -27,7 +28,7 @@
           <button type="button" name="button" @click="enterValue">Aggiungi</button>
 
         </div>
-
+        <!-- messaggio pagina  -->
         <h1 :class="[{'hide' : toDoList.length > 0},'margin']">{{messaggio}}</h1>
 
         <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
@@ -55,8 +56,8 @@
         </div>
 
       </div>
-
+      <!-- fine container -->
     <script src="js/script.js"></script>
-    
+
     </body>
 </html>
