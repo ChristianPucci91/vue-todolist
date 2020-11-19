@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
+      <meta charset="utf-8">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-            crossorigin="anonymous" />
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous" />
       <link rel="stylesheet" href="css/main.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <title>To-do List</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <title>To-do List</title>
     </head>
     <body>
 
       <!-- container pagina -->
       <div id="app" class="container">
         <div class="jumbo">
+
           <img :src="img" alt="">
+
         </div>
         <!-- box input & button  -->
         <div class="header">
@@ -25,28 +27,29 @@
           <button type="button" name="button" @click="enterValue">Aggiungi</button>
 
         </div>
+
         <h1 :class="[{'hide' : toDoList.length > 0},'margin']">{{messaggio}}</h1>
+
         <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
         <div v-for="(item,index) in toDoList"  class="list">
-          <div :class="{active: isActive ===index}" class="sotto_list">
+          <div :class="{active: isActive === index}" class="sotto_list">
 
            {{toDoList[index]}}
 
-          <!-- darò un evento click legato all'indice dell'icona aggiunta -->
+            <!-- darò un evento click legato all'indice dell'icona aggiunta -->
+            <i class = 'fas fa-times' @click="removeList(index)" ></i>
 
-          <i class = 'fas fa-times' @click="removeList(index)" ></i>
-
-          <i class="far fa-check-circle " :class="{bg_green: isGreen === index}" @click="signedList(index)" ></i>
+            <i class="far fa-check-circle " :class="{bg_green: isGreen === index}" @click="signedList(index)" ></i>
 
           </div>
           <!-- // test box conferma per eliminare -->
-          <div :class="(confirmBox == true)?'show':'hide'">
+          <!-- <div :class="(confirmBox == true)?'show':'hide'">
 
             <h3>Confermi?</h3>
             <button class="btn" type="button" name="button" @click="yes">Si</button>
             <button class="btn" type="button" name="button" @click="no">Annulla</button>
 
-          </div>
+          </div> -->
           <!-- fine test -->
 
         </div>
@@ -54,5 +57,6 @@
       </div>
 
     <script src="js/script.js"></script>
+    
     </body>
 </html>

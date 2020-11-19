@@ -10,15 +10,14 @@ var app = new Vue({
   el: "#app",
   data: {
     toDoList: [
-      "FARE COLAZIONE",
-      "ALLENARSI",
+      // "FARE COLAZIONE",
+      // "ALLENARSI",
     ],
 
     isGreen:false,
     isActive:false,
     messaggio:'La tua lista è vuota, oggi sei libero!',
     confirmBox:false,
-
     img:"img/todowhite.png",
     value:null // valore di quello che inserisce l'utente
   },
