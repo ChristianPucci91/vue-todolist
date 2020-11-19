@@ -15,6 +15,7 @@ var app = new Vue({
 
     isGreen:false,
     isActive:false,
+    confirmBox:false,
 
     img:"img/todowhite.png",
     value:null // valore di quello che inserisce l'utente
@@ -41,12 +42,20 @@ var app = new Vue({
     },
 
     removeList: function (index) {
-      this.toDoList.splice(index,1)
+      this.confirmBox = true;
+      // this.toDoList.splice(index,1);
+    },
+    yes:function () {
+      this.toDoList.splice(index,1);
+      this.confirmBox = false;
+    },
+    no:function () {
+      this.confirmBox = false;
     },
     signedList: function (index) {
-     
-      this.isGreen = index
-      this.isActive = index
+
+      this.isGreen = index;
+      this.isActive = index;
 
     }
   }
