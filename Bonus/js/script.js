@@ -9,10 +9,13 @@ var app = new Vue({
   el: "#app",
   data: {
     toDoList: [
-      "Fare colazione",
-      "Allenarsi",
+      "FARE COLAZIONE",
+      "ALLENARSI",
     ],
-    isActive: false,
+
+    isGreen:false,
+    isActive:false,
+
     img:"img/todowhite.png",
     value:null // valore di quello che inserisce l'utente
   },
@@ -20,6 +23,8 @@ var app = new Vue({
   methods: { // funzione inserimento con tasto ENTER
 
     enterValue: function () {
+
+      this.value = this.value.toUpperCase();
 
       if ((this.value == null) || (this.value == 0 )) {
         alert("ERRORE: Devi inserire qualcosa");
@@ -39,7 +44,10 @@ var app = new Vue({
       this.toDoList.splice(index,1)
     },
     signedList: function (index) {
-      this.isActive = !this.isActive;
+     
+      this.isGreen = index
+      this.isActive = index
+
     }
   }
 })

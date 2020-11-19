@@ -12,7 +12,7 @@
     align-items: center;
     margin: 0 auto;
     width: 70%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* regole di posizionamento box */
@@ -23,7 +23,7 @@
   justify-content:center;
   align-items: space-between;
   width: 70%;
-  margin-top: 20px;
+  margin-top: 10px;
   min-height: 40px;
 }
 i {
@@ -81,6 +81,11 @@ input{
   width: 350px;
   border-radius:10px;
   box-shadow: 0 0 5px 0 #3C3C3C;
+}
+
+.bg_green {
+  background-color:#4ED300 ;
+  border-radius: 50%;
 }
 
 /* delete box */
