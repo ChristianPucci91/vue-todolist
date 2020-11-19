@@ -40,11 +40,12 @@ var app = new Vue({
         this.toDoList.push(this.value);
         this.value = '';
       }
-    },
+    }, /// BONUSv 4 & 5 DA COMPLETARE //////////////////////////
 
     removeList: function (index) {
       this.confirmBox = true;
       Vue.delete(this.toDoList,index)
+      console.log(this.toDoList,index);
     },
     yes:function () {
       // this.toDoList.splice(index,1);
