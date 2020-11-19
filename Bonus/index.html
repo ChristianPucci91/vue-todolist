@@ -25,6 +25,7 @@
           <button type="button" name="button" @click="enterValue">Aggiungi</button>
 
         </div>
+        <h1 :class="[{'hide' : toDoList.length > 0},'margin']">{{messaggio}}</h1>
         <!-- per ogni elemento della lista tiro fuori l'elemento e l'indice e lo stampo in un div con l'icona "x" -->
         <div v-for="(item,index) in toDoList"  class="list">
           <div :class="{active: isActive ===index}" class="sotto_list">
@@ -34,6 +35,7 @@
           <!-- darò un evento click legato all'indice dell'icona aggiunta -->
 
           <i class = 'fas fa-times' @click="removeList(index)" ></i>
+
           <i class="far fa-check-circle " :class="{bg_green: isGreen === index}" @click="signedList(index)" ></i>
 
           </div>

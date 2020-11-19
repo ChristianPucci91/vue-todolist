@@ -4,6 +4,7 @@
 // -3- Bonus 1- inserita la casistica per inviare i dati direttamente con il tasto enter anzichè cliccare sul bottone di invio
 //-4- IN LAVORAZIONE bonus 2- click con icona "check" alternativa all'icona "x" di elimina e barra semplicemente la parola nella lista anzichè cancellarla.
 //-5- IN LAVORAZIONE bonus 3- quando l'utente clicca sull'icona elimina farà uscire un box di conferma se magari ho cliccato per sbaglio con dei buttons dove se dirò di si la confermerà la cancellazione altrimenti tornerà al flusso di partenza.
+//-6- bonus 4 aggiunto elemento se la lista è vuota comparirà "Oggi sei libero"
 
 var app = new Vue({
   el: "#app",
@@ -15,6 +16,7 @@ var app = new Vue({
 
     isGreen:false,
     isActive:false,
+    messaggio:'La tua lista è vuota, oggi sei libero!',
     confirmBox:false,
 
     img:"img/todowhite.png",
@@ -43,10 +45,10 @@ var app = new Vue({
 
     removeList: function (index) {
       this.confirmBox = true;
-      // this.toDoList.splice(index,1);
+      Vue.delete(this.toDoList,index)
     },
     yes:function () {
-      this.toDoList.splice(index,1);
+      // this.toDoList.splice(index,1);
       this.confirmBox = false;
     },
     no:function () {
@@ -54,8 +56,8 @@ var app = new Vue({
     },
     signedList: function (index) {
 
-      this.isGreen = index;
-      this.isActive = index;
+      this.isGreen = index
+      this.isActive = index
 
     }
   }

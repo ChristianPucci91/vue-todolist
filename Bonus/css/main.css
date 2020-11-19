@@ -100,6 +100,9 @@ input{
 .hide {
   display: none;
 }
+.margin{
+  margin-top: 20px;
+}
 .show {
   display: block;
   position: absolute;
