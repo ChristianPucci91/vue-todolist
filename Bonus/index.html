@@ -47,10 +47,20 @@
            {{item.toDo}}
 
             <!-- darò un evento click legato all'indice dell'icona aggiunta -->
-            <i class = 'fas fa-times' @click="removeList(index)" ></i>
+            <i class = 'fas fa-times' @click="removeList(item)" ></i>
             <i class="far fa-check-circle "
             :class="{'bg_green':item.isGreen}"
             @click="signedList(item)" ></i>
+
+            <!-- // test box conferma per eliminare -->
+            <div :class="(item.confirmBox)?'show':'hide'">
+
+              <p class="color">Confermi?</p>
+              <button class="btn" type="button" name="button" @click="yes(item,index)">Si</button>
+              <button class="btn" type="button" name="button" @click="no(item)">Annulla</button>
+
+            </div>
+            <!-- fine test -->
 
           </div>
 

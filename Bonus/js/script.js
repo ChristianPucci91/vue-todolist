@@ -11,13 +11,20 @@ var app = new Vue({
   el: "#app",
   data: {
     toDoList: [
-      {toDo:  "CHIAMA MECCANICO",isActive:false,isGreen:false},
-      {toDo:  "ALLENATI",isActive:false,isGreen:false},
-      {toDo:  "SPESA",isActive:false,isGreen:false},
-      {toDo:  "PAGA BOLLETTE",isActive:false,isGreen:false},
+      {
+        toDo:  "CHIAMA MECCANICO",isActive:false,isGreen:false,confirmBox:false
+      },
+      {
+        toDo:  "ALLENATI",isActive:false,isGreen:false,confirmBox:false
+      },
+      {
+        toDo:  "SPESA",isActive:false,isGreen:false,confirmBox:false
+      },
+      {
+        toDo:  "PAGA BOLLETTE",isActive:false,isGreen:false,confirmBox:false
+      },
     ],
     messaggio:'La tua lista è vuota, oggi sei libero!', // bonus
-    confirmBox:false,// bonus
     img:"img/todowhite.png",
     value:''// valore di quello che inserisce l'utente
   },
@@ -38,24 +45,23 @@ var app = new Vue({
         alert("ERRORE: Hai già inserito questo appunto");
         this.value = '';
       }else {
-        this.toDoList.push({toDo:this.value,isActive:false,isGreen:false});
+        this.toDoList.push({toDo:this.value,isActive:false,isGreen:false,confirmBox:false});
         this.value = '';
       }
       console.log(this.toDoList);
     }, /// BONUSv 4 & 5 DA COMPLETARE //////////////////////////
 
-    removeList: function (index) {
-      // this.confirmBox = true;
-      Vue.delete(this.toDoList,index)
+    removeList: function (item) {
+      item.confirmBox = true;
       console.log(this.toDoList,index);
     },
     // --------------- FUNZIONI TEST BONUS -------------
-    yes:function () {
-      // this.toDoList.splice(index,1);
-      this.confirmBox = false;
+    yes:function (item,index) {
+      Vue.delete(this.toDoList,index)
+      item.confirmBox = false;
     },
-    no:function () {
-      this.confirmBox = false;
+    no:function (item) {
+      item.confirmBox = false;
     },
     signedList: function (item) {
       // this.isGreen =! this.isGreen;
