@@ -6,21 +6,22 @@
 //-5- IN LAVORAZIONE bonus 3- quando l'utente clicca sull'icona elimina farà uscire un box di conferma se magari ho cliccato per sbaglio con dei buttons dove se dirò di si la confermerà la cancellazione altrimenti tornerà al flusso di partenza.
 //-6- bonus 4 aggiunto elemento se la lista è vuota comparirà "Oggi sei libero"
 
+
 var app = new Vue({
   el: "#app",
   data: {
     toDoList: [
-      // "FARE COLAZIONE",
-      // "ALLENARSI",
+      {toDo:  "CHIAMA MECCANICO",isActive:false,isGreen:false},
+      {toDo:  "ALLENATI",isActive:false,isGreen:false},
+      {toDo:  "SPESA",isActive:false,isGreen:false},
+      {toDo:  "PAGA BOLLETTE",isActive:false,isGreen:false},
     ],
-
-    isGreen:false,
-    isActive:false,
-    messaggio:'La tua lista è vuota, oggi sei libero!',
-    confirmBox:false,
+    messaggio:'La tua lista è vuota, oggi sei libero!', // bonus
+    confirmBox:false,// bonus
     img:"img/todowhite.png",
-    value:null // valore di quello che inserisce l'utente
+    value:''// valore di quello che inserisce l'utente
   },
+
 
   methods: { // funzione inserimento con tasto ENTER
 
@@ -33,20 +34,22 @@ var app = new Vue({
       }else if (this.value.length > 50) {
         alert("ERRORE: Non puoi inserire più di 50 caratteri");
         this.value = '';
-      }else if (this.toDoList.includes(this.value)) {
+      }else if (this.toDoList.filter(item => item.toDo === this.value).length > 0) {
         alert("ERRORE: Hai già inserito questo appunto");
         this.value = '';
       }else {
-        this.toDoList.push(this.value);
+        this.toDoList.push({toDo:this.value,isActive:false,isGreen:false});
         this.value = '';
       }
+      console.log(this.toDoList);
     }, /// BONUSv 4 & 5 DA COMPLETARE //////////////////////////
 
     removeList: function (index) {
-      this.confirmBox = true;
+      // this.confirmBox = true;
       Vue.delete(this.toDoList,index)
       console.log(this.toDoList,index);
     },
+    // --------------- FUNZIONI TEST BONUS -------------
     yes:function () {
       // this.toDoList.splice(index,1);
       this.confirmBox = false;
@@ -54,10 +57,10 @@ var app = new Vue({
     no:function () {
       this.confirmBox = false;
     },
-    signedList: function (index) {
-
-      this.isGreen = index
-      this.isActive = index
+    signedList: function (item) {
+      // this.isGreen =! this.isGreen;
+      item.isActive = !item.isActive;
+      item.isGreen = !item.isGreen;
 
     }
   }
