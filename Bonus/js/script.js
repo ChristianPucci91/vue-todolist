@@ -38,8 +38,8 @@ var app = new Vue({
 
       if ((this.value == null) || (this.value == 0 )) {
         alert("ERRORE: Devi inserire qualcosa");
-      }else if (this.value.length > 50) {
-        alert("ERRORE: Non puoi inserire più di 50 caratteri");
+      }else if (this.value.length > 30) {
+        alert("ERRORE: Non puoi inserire più di 30 caratteri");
         this.value = '';
       }else if (this.toDoList.filter(item => item.toDo === this.value).length > 0) {
         alert("ERRORE: Hai già inserito questo appunto");
